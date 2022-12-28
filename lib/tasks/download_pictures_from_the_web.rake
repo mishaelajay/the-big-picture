@@ -14,7 +14,6 @@ task :download_images, [:source_file_path, :images_target_path] => :environment 
 
   url_cache_service.flush_redis_cache
 
-  byebug
   until urls.empty? do
     valid_unique_urls, invalid_urls = filter_invalid_duplicate_urls(urls.map(&:strip))
     url_cache_service.set_download_attempted(valid_unique_urls)
@@ -45,7 +44,7 @@ def url_validator_service(url)
 end
 
 def check_path_validity(path, type)
-  fpv = FilePathValidator.new(path: path, type: type)
+  fpv = PathValidator.new(path: path, type: type)
   raise InvalidPathError.new unless fpv.valid_path?
   rescue InvalidPathError => e
     puts "#{e.message}, path: #{path}"

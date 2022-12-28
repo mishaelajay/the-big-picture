@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class FilePathValidator
+class PathValidator
   attr_accessor :path, :type
   def initialize(path:, type: 'dir')
     @path = Pathname.new(path)

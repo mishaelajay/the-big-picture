@@ -15,11 +15,13 @@ class UrlCacher
     urls.select{ |url| cached_urls[url] != 1 }
   end
 
-  def fetch_cached_urls_if_present(urls)
-    redis_cache.mapped_mget(*urls)
-  end
-
   def flush_redis_cache
     redis_cache.flushall
+  end
+
+  private
+
+  def fetch_cached_urls_if_present(urls)
+    redis_cache.mapped_mget(*urls)
   end
 end
