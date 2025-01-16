@@ -23,9 +23,6 @@ Make sure redis is running as a service on the default port 6379
 In a separate terminal, start the sidekiq process by running the following command
 
     bundle exec sidekiq
-
-Install the latest version of Sidekiq
-
 To download images, first place your urls in a .txt file. Make sure they are space separated. For example:
 
     https://www.at-languagesolutions.com/en/wp-content/uploads/2016/06/http-1.jpg  https://cdn.searchenginejournal.com/wpcontent/uploads/2018/04/durable-urls.png https://s3.amazonaws.com/images.seroundtable.com/google-submit-url-1516800645.jpg https://www.seo-kueche.de/wp-content/uploads/Aufbau-einer-URL.jpg https://www.at-languagesolutions.com/en/wp-content/uploads/2016/06/http-1.jpg https://cdn.searchenginejournal.com/wp-content/uploads/2018/04/durable-urls.png
